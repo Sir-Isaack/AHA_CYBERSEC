@@ -1,0 +1,8 @@
+conference.africahackon.com
+ctf.africahackon.com
+labs.africahackon.com
+www.conference.africahackon.com
+www.fresh.africahackon.com
+www.intel.africahackon.com
+www.labs.africahackon.com
+www.learnlinux.africahackon.com

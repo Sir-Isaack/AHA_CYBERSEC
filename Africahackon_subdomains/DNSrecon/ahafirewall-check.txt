@@ -1,0 +1,7 @@
+https://members.africahackon.com [403] [cloudflare] [cloudflare]
+https://new.africahackon.com [403] [cloudflare] [cloudflare]
+https://ftp.africahackon.com [403] [cloudflare] [cloudflare]
+https://webmail.africahackon.com [200] [cloudflare] [cloudflare]
+https://mail.africahackon.com [301] [cloudflare] [cloudflare]
+https://www.africahackon.com [301] [cloudflare] [cloudflare]
+https://events.africahackon.com [200] [cloudflare] [cloudflare]

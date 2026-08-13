@@ -1,0 +1,7 @@
+events.africahackon.com
+ftp.africahackon.com
+mail.africahackon.com
+members.africahackon.com
+new.africahackon.com
+webmail.africahackon.com
+www.africahackon.com
