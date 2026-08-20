@@ -1,0 +1,24 @@
+sudo apt install ufw
+sudo ufw enable
+sudo ufw logging on
+
+# Rule 1: Limit repeated SSH connection attempts
+sudo ufw limit 22/tcp
+
+# This rule permits normal SSH connections on TCP port 22 while limiting repeated attempts.
+# It helps reduce SSH brute-force activity, and UFW logs the limited attempts in /var/log/ufw.log.
+
+# Rule 2: Limit common TCP ports targeted by SYN scans
+# Limit repeated TCP connections to web port 80, helping reduce rapid scan or connection attempts
+sudo ufw limit 80/tcp
+
+# limit repeated TCP connections to secure web port 443, helping reduce rapid scan or connection attempts.
+sudo ufw limit 443/tcp
+
+# Block all Telnet traffic on port 23, preventing access to an unused service.
+sudo ufw deny 23/tcp
+
+# These rules rate-limit connection attempts to common web-service ports and block Telnet on TCP port 23.
+# They help limit or block rapid probing of these ports, while UFW logging records blocked or limited traffic.
+
+sudo ufw status
