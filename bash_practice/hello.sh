@@ -1,2 +1,7 @@
 #!/bin/bash
-echo "Hello World"
+
+time=$(date)
+
+echo "Hello $USER"
+
+echo "Today is $time"
