@@ -12,29 +12,37 @@
 # 2. The output file for decoded plaintext
 
 
+# Display the script heading in yellow
+echo -e "\033[1;33m===================================="
+echo "     Base64 Decoding"
+echo -e "====================================\033[0m"
+echo
+
+
 # Ask the user for the input file
 echo "Enter the input file containing Base64 strings:"
+iecho
 
 # Store the input filename
 read -r input_file
+echo
 
 
 # Check whether the input file exists
 if [ ! -f "$input_file" ]; then
-
         # Display an error message
         echo "Error: The file '$input_file' does not exist."
-
-        # Exit with a non-zero status
         exit 1
 fi
 
 
 # Ask the user for the output file
-echo "Enter the output file:"
+echo "Enter the output file for decoded plaintext:"
+echo
 
 # Store the output filename
 read -r output_file
+echo
 
 
 # Check whether the base64 command is available
@@ -56,7 +64,7 @@ if command -v base64 >/dev/null 2>&1; then
         fi
 
 else
-        # base64 command is not available
+        # Base64 command is not available
         decode_flag=""
 fi
 
@@ -74,9 +82,15 @@ if [ -z "$decode_flag" ]; then
         fi
 
 else
-
         # Use the system base64 command
         encoder="base64"
+fi
+
+
+# Check whether the output file can be created
+if ! : > "$output_file"; then
+        echo "Error: Cannot create or write to '$output_file'."
+        exit 1
 fi
 
 
@@ -119,6 +133,13 @@ while IFS= read -r encoded; do
         # Write the decoded plaintext to the output file
         printf '%s\n' "$decoded" >> "$output_file"
 
-
-# Continue until the entire input file has been processed
 done < "$input_file"
+
+
+# Display the input and output files
+echo
+echo "Input file: $input_file"
+echo
+echo "Decoded file: $output_file"
+echo
+echo "Base64 decoding was successful"

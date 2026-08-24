@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Base64 Encoder heading
-echo -e "\033[1;36m========================"
+echo -e "\033[1;36m==================================================="
 echo "Base64 Encoder"
-echo -e "========================\033[0m"
+echo -e "============================================\033[0m"
 echo
 
 # Description: Reads plaintext passwords and Base64-encodes each password
