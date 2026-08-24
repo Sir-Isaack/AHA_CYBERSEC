@@ -1,5 +1,22 @@
 #!/bin/bash
 
+# encode_base64.sh
+#
+# Purpose:
+#   Read plaintext values from an input file, one per line,
+#   Base64-encode each non-empty line, and write the encoded
+#   values to an output file.
+#
+# Usage:
+#   ./encode_base64.sh
+#
+# The script prompts the user for:
+#   1. Input file
+#   2. Output file
+#
+# The script uses the system base64 command when available.
+# If the required base64 encoding option is unavailable,
+# Python 3 is used as a fallback
 # Base64 Encoder heading
 echo -e "\033[1;36m==================================================="
 echo "Base64 Encoder"
